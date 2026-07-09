@@ -8,10 +8,15 @@ public class PlayerControlle: MonoBehaviour
 
     // Move Player
     [SerializeField] private InputActionReference moveAction;
+    [SerializeField] private InputActionReference jumpAction;
+    [SerializeField] private InputActionReference lookAction;
     [SerializeField] private float speedMove;
+    [SerializeField] private float jumpPower;
+    [SerializeField] private float lookSpeed;
 
     private CharacterController characterController;
     private float ySpeed = 0;
+    private float hRoot;
 
     #endregion
 
@@ -23,21 +28,18 @@ public class PlayerControlle: MonoBehaviour
         characterController = GetComponent<CharacterController>();
     }
 
-    private void FixedUpdate()
-    {
-        Move();
-    }
 
     private void Update()
     {
-
+        MoveAndJump();
+        Look();
     }
 
     #endregion
 
     #region Controller Function
 
-    private void Move()
+    private void MoveAndJump()
     {
         Vector2 moveInput = moveAction.action.ReadValue<Vector2>();
 
@@ -48,6 +50,10 @@ public class PlayerControlle: MonoBehaviour
         if (characterController.isGrounded)
         {
             ySpeed = 0f;
+            if (jumpAction.action.WasPerformedThisFrame())
+            {
+                ySpeed = jumpPower;
+            }
         }
         else
         {
@@ -59,5 +65,15 @@ public class PlayerControlle: MonoBehaviour
         characterController.Move(moveData * Time.deltaTime);
 
     }
+
+    private void Look()
+    {
+        Vector2 lookData = lookAction.action.ReadValue<Vector2>();
+
+        hRoot += lookData.x * lookSpeed * Time.deltaTime;
+
+        transform.rotation = Quaternion.Euler(0f,hRoot, 0f);
+    }
+
     #endregion
 }
