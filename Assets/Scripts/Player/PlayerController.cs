@@ -1,3 +1,5 @@
+using System;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,16 +9,24 @@ public class PlayerControlle: MonoBehaviour
     #region Variables
 
     // Move Player
+    [Header("Input Refrences")]
     [SerializeField] private InputActionReference moveAction;
     [SerializeField] private InputActionReference jumpAction;
     [SerializeField] private InputActionReference lookAction;
+
+    [Header("Tools Need")]
+    [SerializeField] private Transform camTransform;
+
+    [Header("Setting")]
     [SerializeField] private float speedMove;
     [SerializeField] private float jumpPower;
     [SerializeField] private float lookSpeed;
+    [SerializeField] private float numberlook;
+
 
     private CharacterController characterController;
     private float ySpeed = 0;
-    private float hRoot;
+    private float hRoot, vRoot;
 
     #endregion
 
@@ -26,6 +36,8 @@ public class PlayerControlle: MonoBehaviour
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
 
@@ -43,7 +55,13 @@ public class PlayerControlle: MonoBehaviour
     {
         Vector2 moveInput = moveAction.action.ReadValue<Vector2>();
 
-        Vector3 moveData = new Vector3(moveInput.x, 0, moveInput.y);
+        //Vector3 moveData = new Vector3(moveInput.x, 0, moveInput.y);
+
+        Vector3 vMove = transform.forward * moveInput.y;
+        Vector3 hMove = transform.right * moveInput.x;
+
+        Vector3 moveData = hMove + vMove;
+        moveData = moveData.normalized;
 
         moveData *= speedMove;
 
@@ -71,8 +89,11 @@ public class PlayerControlle: MonoBehaviour
         Vector2 lookData = lookAction.action.ReadValue<Vector2>();
 
         hRoot += lookData.x * lookSpeed * Time.deltaTime;
+        transform.rotation = Quaternion.Euler(0f, hRoot, 0f);
 
-        transform.rotation = Quaternion.Euler(0f,hRoot, 0f);
+        vRoot -= lookData.y * lookSpeed * Time.deltaTime;
+        vRoot = Math.Clamp(vRoot,-numberlook,numberlook);
+        camTransform.localRotation = Quaternion.Euler(vRoot,0f, 0f);
     }
 
     #endregion
