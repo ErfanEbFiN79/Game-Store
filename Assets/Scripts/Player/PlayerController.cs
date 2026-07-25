@@ -15,7 +15,7 @@ public class PlayerControlle: MonoBehaviour
     [SerializeField] private InputActionReference lookAction;
 
     [Header("Tools Need")]
-    [SerializeField] private Transform camTransform;
+    [SerializeField] private Camera cam;
 
     [Header("Setting")]
     [SerializeField] private float speedMove;
@@ -23,6 +23,11 @@ public class PlayerControlle: MonoBehaviour
     [SerializeField] private float lookSpeed;
     [SerializeField] private float numberlook;
 
+    [Header("Pickup system")]
+    [SerializeField] private LayerMask stockMask;
+    [SerializeField] private float workRange;
+    [SerializeField] private Transform holdPoint;   
+    private GameObject pickObject;
 
     private CharacterController characterController;
     private float ySpeed = 0;
@@ -45,6 +50,7 @@ public class PlayerControlle: MonoBehaviour
     {
         MoveAndJump();
         Look();
+        CheckStock();
     }
 
     #endregion
@@ -93,7 +99,30 @@ public class PlayerControlle: MonoBehaviour
 
         vRoot -= lookData.y * lookSpeed * Time.deltaTime;
         vRoot = Math.Clamp(vRoot,-numberlook,numberlook);
-        camTransform.localRotation = Quaternion.Euler(vRoot,0f, 0f);
+        cam.transform.localRotation = Quaternion.Euler(vRoot,0f, 0f);
+    }
+
+    #endregion
+
+    #region Check
+
+    private void CheckStock()
+    {
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        RaycastHit hit;
+
+        if(Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            if(Physics.Raycast(ray, out hit, workRange, stockMask))
+            {
+                print("Let's get it");
+                pickObject = hit.collider.gameObject;
+                pickObject.transform.SetParent(holdPoint);
+                pickObject.transform.localPosition = Vector3.zero;
+                pickObject.transform.localRotation = Quaternion.identity;
+            }
+        }
+
     }
 
     #endregion
