@@ -28,6 +28,7 @@ public class PlayerControlle: MonoBehaviour
     [SerializeField] private float workRange;
     [SerializeField] private Transform holdPoint;   
     private GameObject pickObject;
+    private bool weHoldSomethings; 
 
     private CharacterController characterController;
     private float ySpeed = 0;
@@ -44,7 +45,6 @@ public class PlayerControlle: MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
     }
-
 
     private void Update()
     {
@@ -111,7 +111,7 @@ public class PlayerControlle: MonoBehaviour
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
 
-        if(Mouse.current.leftButton.wasPressedThisFrame)
+        if(Mouse.current.leftButton.wasPressedThisFrame && !weHoldSomethings)
         {
             if(Physics.Raycast(ray, out hit, workRange, stockMask))
             {
@@ -120,10 +120,18 @@ public class PlayerControlle: MonoBehaviour
                 pickObject.transform.SetParent(holdPoint);
                 pickObject.transform.localPosition = Vector3.zero;
                 pickObject.transform.localRotation = Quaternion.identity;
+                pickObject.GetComponent<Rigidbody>().isKinematic = true;
+                weHoldSomethings = true;
             }
         }
+        else if(Mouse.current.leftButton.wasPressedThisFrame && weHoldSomethings)
+        {
+            //pickObject.GetComponent<Rigidbody>().isKinematic = false;
+            pickObject.transform.SetParent(null);
+            pickObject = null;
+            weHoldSomethings = false;
 
+        }
     }
-
     #endregion
 }
