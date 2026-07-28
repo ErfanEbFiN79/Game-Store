@@ -13,6 +13,7 @@ public class PlayerControlle: MonoBehaviour
     [SerializeField] private InputActionReference moveAction;
     [SerializeField] private InputActionReference jumpAction;
     [SerializeField] private InputActionReference lookAction;
+    [SerializeField] private InputActionReference throwAction;
 
     [Header("Tools Need")]
     [SerializeField] private Camera cam;
@@ -26,13 +27,15 @@ public class PlayerControlle: MonoBehaviour
     [Header("Pickup system")]
     [SerializeField] private LayerMask stockMask;
     [SerializeField] private float workRange;
-    [SerializeField] private Transform holdPoint;   
+    [SerializeField] private Transform holdPoint;
+    [SerializeField] private float throwForce;
     private GameObject pickObject;
     private bool weHoldSomethings; 
 
     private CharacterController characterController;
     private float ySpeed = 0;
     private float hRoot, vRoot;
+   
 
     #endregion
 
@@ -111,11 +114,10 @@ public class PlayerControlle: MonoBehaviour
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
 
-        if(Mouse.current.leftButton.wasPressedThisFrame && !weHoldSomethings)
+        if(Mouse.current.leftButton.wasPressedThisFrame && !weHoldSomethings && pickObject == null)
         {
             if(Physics.Raycast(ray, out hit, workRange, stockMask))
             {
-                print("Let's get it");
                 pickObject = hit.collider.gameObject;
                 pickObject.transform.SetParent(holdPoint);
                 pickObject.transform.localPosition = Vector3.zero;
@@ -126,12 +128,20 @@ public class PlayerControlle: MonoBehaviour
         }
         else if(Mouse.current.leftButton.wasPressedThisFrame && weHoldSomethings)
         {
-            //pickObject.GetComponent<Rigidbody>().isKinematic = false;
+            pickObject.GetComponent<Rigidbody>().isKinematic = false;
             pickObject.transform.SetParent(null);
             pickObject = null;
             weHoldSomethings = false;
-
+        }
+        else if (throwAction.action.inProgress && weHoldSomethings)
+        {
+            pickObject.GetComponent<Rigidbody>().isKinematic = false;
+            pickObject.transform.SetParent(null);
+            pickObject.GetComponent<Rigidbody>().AddForce(cam.transform.forward * throwForce, ForceMode.Impulse);
+            pickObject = null;
+            weHoldSomethings = false;
         }
     }
     #endregion
+
 }
