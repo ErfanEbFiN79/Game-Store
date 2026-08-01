@@ -30,7 +30,10 @@ public class PlayerControlle: MonoBehaviour
     [SerializeField] private Transform holdPoint;
     [SerializeField] private float throwForce;
     private GameObject pickObject;
-    private bool weHoldSomethings; 
+    private bool weHoldSomethings;
+
+    [Header("Shelf System")]
+    [SerializeField] private LayerMask shelfLayer;
 
     private CharacterController characterController;
     private float ySpeed = 0;
@@ -140,6 +143,18 @@ public class PlayerControlle: MonoBehaviour
             pickObject.GetComponent<Rigidbody>().AddForce(cam.transform.forward * throwForce, ForceMode.Impulse);
             pickObject = null;
             weHoldSomethings = false;
+        }
+
+        // Code for put things one the shelf
+        if (Mouse.current.rightButton.wasPressedThisFrame && weHoldSomethings)
+        {   
+            if (Physics.Raycast(ray, out hit, workRange, shelfLayer))
+            {
+                pickObject.transform.position = hit.transform.position;
+                //pickObject.transform.rotation = hit.transform.rotation;
+                pickObject.transform.SetParent(null);
+                pickObject = null;
+            }
         }
     }
     #endregion
