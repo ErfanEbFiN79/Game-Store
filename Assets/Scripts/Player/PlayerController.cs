@@ -137,15 +137,17 @@ public class PlayerControlle: MonoBehaviour
         }
         else if(Mouse.current.leftButton.wasPressedThisFrame && weHoldSomethings)
         {
-            pickObject.GetComponent<Rigidbody>().isKinematic = false;
+            //pickObject.GetComponent<Rigidbody>().isKinematic = false;
+            pickObject.Release();
             pickObject.transform.SetParent(null);
             pickObject = null;
             weHoldSomethings = false;
         }
         else if (throwAction.action.inProgress && weHoldSomethings)
         {
-            pickObject.GetComponent<Rigidbody>().isKinematic = false;
+            //pickObject.GetComponent<Rigidbody>().isKinematic = false;
             pickObject.transform.SetParent(null);
+            pickObject.Release();
             pickObject.GetComponent<Rigidbody>().AddForce(cam.transform.forward * throwForce, ForceMode.Impulse);
             pickObject = null;
             weHoldSomethings = false;
