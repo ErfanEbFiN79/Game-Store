@@ -1,16 +1,37 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Stocks : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    #region Variables
+
+    private Rigidbody _rb;
+
+    #endregion
+
+    #region Unity Functions
+
+    private void Start()
     {
-        
+        _rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    #endregion
+
+
+    #region Access Functions
+
+    public void PickUp()
     {
-        
+        _rb.isKinematic = true;
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
+    } 
+
+    public void MakePalace()
+    {
+        _rb.isKinematic = true;
     }
+
+    #endregion
 }

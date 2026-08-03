@@ -29,7 +29,7 @@ public class PlayerControlle: MonoBehaviour
     [SerializeField] private float workRange;
     [SerializeField] private Transform holdPoint;
     [SerializeField] private float throwForce;
-    private GameObject pickObject;
+    private Stocks pickObject;
     private bool weHoldSomethings;
 
     [Header("Shelf System")]
@@ -121,12 +121,18 @@ public class PlayerControlle: MonoBehaviour
         {
             if(Physics.Raycast(ray, out hit, workRange, stockMask))
             {
-                pickObject = hit.collider.gameObject;
+                /*pickObject = hit.collider.gameObject;
                 pickObject.transform.SetParent(holdPoint);
                 pickObject.transform.localPosition = Vector3.zero;
                 pickObject.transform.localRotation = Quaternion.identity;
                 pickObject.GetComponent<Rigidbody>().isKinematic = true;
+                weHoldSomethings = true;*/
+
+                pickObject = hit.transform.GetComponent<Stocks>();
+                pickObject.transform.SetParent(holdPoint);
+                pickObject.PickUp();
                 weHoldSomethings = true;
+
             }
         }
         else if(Mouse.current.leftButton.wasPressedThisFrame && weHoldSomethings)
@@ -150,10 +156,14 @@ public class PlayerControlle: MonoBehaviour
         {   
             if (Physics.Raycast(ray, out hit, workRange, shelfLayer))
             {
-                pickObject.transform.position = hit.transform.position;
+                /*pickObject.transform.position = hit.transform.position;
                 //pickObject.transform.rotation = hit.transform.rotation;
                 pickObject.transform.SetParent(null);
+                pickObject = null;*/
+                pickObject.MakePalace();
+                pickObject.transform.SetParent(hit.transform);
                 pickObject = null;
+                weHoldSomethings = false;
             }
         }
     }
