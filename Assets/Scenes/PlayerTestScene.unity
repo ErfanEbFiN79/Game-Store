@@ -2653,6 +2653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Stocks
   speed: 0.02
   speedRotate: 0.5
+  stockInfo: {fileID: 11400000, guid: fdd6b46cfe4caba4c9ae9dad960bc983, type: 2}
 --- !u!33 &12004055962501569
 MeshFilter:
   m_ObjectHideFlags: 0

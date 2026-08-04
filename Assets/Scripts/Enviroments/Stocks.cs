@@ -7,6 +7,7 @@ public class Stocks : MonoBehaviour
 
     [SerializeField] private float speed;
     [SerializeField] private float speedRotate;
+    [SerializeField] private ScriptableObject stockInfo;
 
     private Quaternion firstRotate;
     private Rigidbody _rb;
