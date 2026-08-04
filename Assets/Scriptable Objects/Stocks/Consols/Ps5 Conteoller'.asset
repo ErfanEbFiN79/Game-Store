@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b676d5cf4cf06b6448df388c2007f9ac, type: 3}
-  m_Name: Cheez
+  m_Name: Ps5 Conteoller'
   m_EditorClassIdentifier: Assembly-CSharp::StockInfo
-  name: Cheez
-  type: 7
+  name: Ps5 Conteoller'
+  type: 6

@@ -6,7 +6,7 @@ public class StockInfo : ScriptableObject
     public string name;
     public enum StockType
     {
-        Pc, PS5, Xbox, PcGame, Ps5Game, XboxGame, OtherThings
+        Pc, PS, Xbox, PcGame, Ps5Game, XboxGame, GameThings ,OtherThings
     }
 
     public StockType type;
