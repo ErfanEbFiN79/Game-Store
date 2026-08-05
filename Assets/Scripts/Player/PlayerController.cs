@@ -132,7 +132,7 @@ public class PlayerControlle: MonoBehaviour
                 pickObject.transform.SetParent(holdPoint);
                 pickObject.PickUp();
                 weHoldSomethings = true;
-
+              
             }
         }
         else if(Mouse.current.leftButton.wasPressedThisFrame && weHoldSomethings)
@@ -158,14 +158,18 @@ public class PlayerControlle: MonoBehaviour
         {   
             if (Physics.Raycast(ray, out hit, workRange, shelfLayer))
             {
-                /*pickObject.transform.position = hit.transform.position;
-                //pickObject.transform.rotation = hit.transform.rotation;
-                pickObject.transform.SetParent(null);
-                pickObject = null;*/
-                pickObject.MakePalace();
-                pickObject.transform.SetParent(hit.transform);
-                pickObject = null;
-                weHoldSomethings = false;
+
+                if (hit.collider.GetComponent<ShelfController>().WeHaveSpace())
+                {
+                    pickObject.MakePalace();
+                    pickObject.transform.SetParent(hit.transform);
+                    hit.collider.GetComponent<ShelfController>().AddStock(pickObject.stockInfo);
+                    pickObject = null;
+                    weHoldSomethings = false;
+                   
+                }
+
+
             }
         }
     }

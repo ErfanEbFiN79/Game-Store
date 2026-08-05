@@ -7,7 +7,7 @@ public class Stocks : MonoBehaviour
 
     [SerializeField] private float speed;
     [SerializeField] private float speedRotate;
-    [SerializeField] private ScriptableObject stockInfo;
+    public ScriptableObject stockInfo;
 
     private Quaternion firstRotate;
     private Rigidbody _rb;
@@ -32,7 +32,7 @@ public class Stocks : MonoBehaviour
 
             // if we think we need to change rotation also we can do this
             //transform.localRotation =
-            //    Quaternion.Slerp(transform.localRotation, firstRotate, speedRotate * Time.deltaTime);
+                //Quaternion.Slerp(transform.localRotation,firstRotate, speedRotate * Time.deltaTime);
         }
     }
 
