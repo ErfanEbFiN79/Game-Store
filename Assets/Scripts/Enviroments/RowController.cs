@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class RowController : MonoBehaviour
 {
     [SerializeField] private List<ScriptableObject> ListOfProducts;
+    [SerializeField] private Transform[] poseForObjects;
 
 
     private void Update()
