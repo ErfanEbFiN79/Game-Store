@@ -158,18 +158,12 @@ public class PlayerControlle: MonoBehaviour
         {   
             if (Physics.Raycast(ray, out hit, workRange, shelfLayer))
             {
-
-                if (hit.collider.GetComponent<ShelfController>().WeHaveSpace())
+                hit.collider.GetComponent<ShelfSpaceController>().PlaceStocks(pickObject);
+                if (pickObject.isPlaced)
                 {
-                    pickObject.MakePalace();
-                    pickObject.transform.SetParent(hit.transform);
-                    hit.collider.GetComponent<ShelfController>().AddStock(pickObject.stockInfo);
                     pickObject = null;
                     weHoldSomethings = false;
-                   
                 }
-
-
             }
         }
     }
