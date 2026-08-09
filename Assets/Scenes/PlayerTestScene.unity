@@ -1349,6 +1349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Stocks
   speed: 0.02
   speedRotate: 0.5
+  col: {fileID: 1157197585}
   StockInfo:
     Name: Xbox Series X
     type: 2
@@ -3321,6 +3322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Stocks
   speed: 0.02
   speedRotate: 0.5
+  col: {fileID: 0}
   StockInfo:
     Name: 
     type: 0
@@ -4462,6 +4464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Stocks
   speed: 0.02
   speedRotate: 0.5
+  col: {fileID: 1816333845}
   StockInfo:
     Name: Ps5 Cpntroller
     type: 6
@@ -4499,6 +4502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Stocks
   speed: 0.02
   speedRotate: 0.5
+  col: {fileID: 1149794511}
   StockInfo:
     Name: Xbox Series X
     type: 2
@@ -4552,6 +4556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Stocks
   speed: 0.02
   speedRotate: 0.5
+  col: {fileID: 995953616}
   StockInfo:
     Name: Ps5
     type: 1
@@ -4589,6 +4594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Stocks
   speed: 0.02
   speedRotate: 0.5
+  col: {fileID: 198379731}
   StockInfo:
     Name: Evil Dead
     type: 4

@@ -7,12 +7,14 @@ public class Stocks : MonoBehaviour
 
     [SerializeField] private float speed;
     [SerializeField] private float speedRotate;
+    [SerializeField] private Collider col;
 
     private Quaternion firstRotate;
     private Rigidbody _rb;
 
     public StockInfoClass StockInfo;    
     public bool isPlaced;
+    
 
     #endregion
 
@@ -49,17 +51,20 @@ public class Stocks : MonoBehaviour
         transform.localRotation = Quaternion.identity;
 
         isPlaced = false;
+        col.enabled = false;
     } 
 
     public void MakePalace()
     {
         _rb.isKinematic = true;
         isPlaced = true;
+        col.enabled = false;
     }
 
     public void Release()
     {
         _rb.isKinematic = false;
+        col.enabled = true;
     }
 
     #endregion

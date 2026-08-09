@@ -117,6 +117,7 @@ public class PlayerControlle: MonoBehaviour
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
 
+       
         if(Mouse.current.leftButton.wasPressedThisFrame && !weHoldSomethings && pickObject == null)
         {
             if(Physics.Raycast(ray, out hit, workRange, stockMask))
@@ -133,6 +134,22 @@ public class PlayerControlle: MonoBehaviour
                 pickObject.PickUp();
                 weHoldSomethings = true;
               
+            }
+        }
+        else if(Mouse.current.middleButton.wasPressedThisFrame && !weHoldSomethings)
+        {
+            print("Here");
+            if (Physics.Raycast(ray, out hit, workRange, shelfLayer))
+            {
+                print("Here 2");
+                pickObject = hit.collider.GetComponent<ShelfSpaceController>().GetStock();
+
+                if (pickObject != null)
+                {
+                    pickObject.transform.SetParent(holdPoint);
+                    pickObject.PickUp();
+                    weHoldSomethings = true;
+                }
             }
         }
         else if(Mouse.current.leftButton.wasPressedThisFrame && weHoldSomethings)
