@@ -4,6 +4,7 @@ using UnityEngine;
 public class ShelfSpaceController : MonoBehaviour
 {
     [SerializeField] private List<Stocks> objectsOnShelf;
+    [SerializeField] private List<Transform> bigXboxPoints;
     
     public StockInfoClass info;
     public int amountOnShelf;
@@ -23,13 +24,21 @@ public class ShelfSpaceController : MonoBehaviour
             if (info.Name == objectToPlace.StockInfo.Name)
             {
                 preventPlacing = false;
+
+                if(objectsOnShelf.Count >= bigXboxPoints.Count)
+                {
+                    preventPlacing = true;
+                }
             }
         }
 
         if (!preventPlacing)
         {
-            objectToPlace.transform.SetParent(transform);
+            //objectToPlace.transform.SetParent(transform);
             objectToPlace.MakePalace();
+
+            objectToPlace.transform.SetParent(bigXboxPoints[objectsOnShelf.Count]);
+
             //amountOnShelf += 1;
             objectsOnShelf.Add(objectToPlace);
         }
