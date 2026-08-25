@@ -25,6 +25,30 @@ public class ShelfSpaceController : MonoBehaviour
             {
                 preventPlacing = false;
 
+                switch(info.type)
+                {
+                    case StockInfoClass.StockType.Pc:
+
+                        break;
+
+                    case StockInfoClass.StockType.PS:
+
+                        break;
+
+                    case StockInfoClass.StockType.Xbox:
+
+                        break;
+
+                    case StockInfoClass.StockType.GameThings:
+                        
+                        break;
+
+                    case StockInfoClass.StockType.OtherThings:
+                        
+                        break;
+                        
+                }
+
                 if(objectsOnShelf.Count >= bigXboxPoints.Count)
                 {
                     preventPlacing = true;
