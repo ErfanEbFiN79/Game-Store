@@ -5,7 +5,11 @@ public class ShelfSpaceController : MonoBehaviour
 {
     [SerializeField] private List<Stocks> objectsOnShelf;
     [SerializeField] private List<Transform> bigXboxPoints;
-    
+    [SerializeField] private List<Transform> bigPs5Points;
+    [SerializeField] private List<Transform> bigPcPoints;
+    [SerializeField] private List<Transform> gameThingsPoints;
+    [SerializeField] private List<Transform> otherThingsPoints;
+
     public StockInfoClass info;
     public int amountOnShelf;
     
@@ -21,6 +25,7 @@ public class ShelfSpaceController : MonoBehaviour
         }
         else
         {
+            info = objectToPlace.StockInfo;
             if (info.Name == objectToPlace.StockInfo.Name)
             {
                 preventPlacing = false;
@@ -29,30 +34,52 @@ public class ShelfSpaceController : MonoBehaviour
                 {
                     case StockInfoClass.StockType.Pc:
 
+                        if (objectsOnShelf.Count >= bigPcPoints.Count)
+                        {
+                            preventPlacing = true;
+                        }
+
                         break;
 
                     case StockInfoClass.StockType.PS:
+
+                        if (objectsOnShelf.Count >= bigPs5Points.Count)
+                        {
+                            preventPlacing = true;
+                        }
 
                         break;
 
                     case StockInfoClass.StockType.Xbox:
 
+                        if (objectsOnShelf.Count >= bigXboxPoints.Count)
+                        {
+                            preventPlacing = true;
+                        }
+
                         break;
 
                     case StockInfoClass.StockType.GameThings:
-                        
+
+                        if (objectsOnShelf.Count >= gameThingsPoints.Count)
+                        { 
+                            preventPlacing = true;
+                        }
+
                         break;
 
                     case StockInfoClass.StockType.OtherThings:
-                        
+
+                        if (objectsOnShelf.Count >= otherThingsPoints.Count)
+                        {
+                            preventPlacing = true;
+                        }
+
                         break;
                         
                 }
 
-                if(objectsOnShelf.Count >= bigXboxPoints.Count)
-                {
-                    preventPlacing = true;
-                }
+
             }
         }
 
@@ -61,7 +88,40 @@ public class ShelfSpaceController : MonoBehaviour
             //objectToPlace.transform.SetParent(transform);
             objectToPlace.MakePalace();
 
-            objectToPlace.transform.SetParent(bigXboxPoints[objectsOnShelf.Count]);
+            switch (info.type)
+            {
+                case StockInfoClass.StockType.Pc:
+
+                    objectToPlace.transform.SetParent(bigPcPoints[objectsOnShelf.Count]);
+
+                    break;
+
+                case StockInfoClass.StockType.PS:
+
+                    objectToPlace.transform.SetParent(bigPs5Points[objectsOnShelf.Count]);
+
+                    break;
+
+                case StockInfoClass.StockType.Xbox:
+
+                    objectToPlace.transform.SetParent(bigXboxPoints[objectsOnShelf.Count]);
+
+                    break;
+
+                case StockInfoClass.StockType.GameThings:
+
+                    objectToPlace.transform.SetParent(gameThingsPoints[objectsOnShelf.Count]);
+
+                    break;
+
+                case StockInfoClass.StockType.OtherThings:
+
+                    objectToPlace.transform.SetParent(otherThingsPoints[objectsOnShelf.Count]);
+
+                    break;
+
+            }
+
 
             //amountOnShelf += 1;
             objectsOnShelf.Add(objectToPlace);
