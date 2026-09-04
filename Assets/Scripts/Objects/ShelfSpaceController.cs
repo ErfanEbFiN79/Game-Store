@@ -1,3 +1,4 @@
+using Mono.Cecil.Cil;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,9 +10,12 @@ public class ShelfSpaceController : MonoBehaviour
     [SerializeField] private List<Transform> bigPcPoints;
     [SerializeField] private List<Transform> gameThingsPoints;
     [SerializeField] private List<Transform> otherThingsPoints;
-
+   
     public StockInfoClass info;
     public int amountOnShelf;
+
+    [SerializeField] private bool[] xboxPlacesState;
+    [SerializeField] private bool[] psPlacesState;
     
 
     public void PlaceStocks(Stocks objectToPlace)
@@ -87,9 +91,10 @@ public class ShelfSpaceController : MonoBehaviour
         {
             //objectToPlace.transform.SetParent(transform);
             objectToPlace.MakePalace();
-
+            int code;
             switch (info.type)
             {
+
                 case StockInfoClass.StockType.Pc:
 
                     objectToPlace.transform.SetParent(bigPcPoints[objectsOnShelf.Count]);
@@ -98,14 +103,18 @@ public class ShelfSpaceController : MonoBehaviour
 
                 case StockInfoClass.StockType.PS:
 
-                    objectToPlace.transform.SetParent(bigPs5Points[objectsOnShelf.Count]);
+                    code = FindEmptyPlaces(psPlacesState);
+                    objectToPlace.transform.SetParent(bigPs5Points[code]);
+                    psPlacesState[code] = true;
 
                     break;
 
                 case StockInfoClass.StockType.Xbox:
 
-                    objectToPlace.transform.SetParent(bigXboxPoints[objectsOnShelf.Count]);
-
+                    code = FindEmptyPlaces(xboxPlacesState);
+                    objectToPlace.transform.SetParent(bigXboxPoints[FindEmptyPlaces(xboxPlacesState)]);
+                    xboxPlacesState[code] = true;
+                   
                     break;
 
                 case StockInfoClass.StockType.GameThings:
@@ -143,4 +152,22 @@ public class ShelfSpaceController : MonoBehaviour
 
         return objectForReturn;
     }
+
+    #region Help Functions
+
+    private int FindEmptyPlaces(bool[] list)
+    {
+        for (int i = 0; i < list.Length; i++)
+        {
+            if (list[i] == false)
+            { 
+                return i;
+            }
+        }
+
+        return 0;
+
+    }
+
+    #endregion
 }

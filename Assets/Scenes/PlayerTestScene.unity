@@ -6917,6 +6917,8 @@ MonoBehaviour:
     Name: 
     type: 0
   amountOnShelf: 0
+  xboxPlacesState: 000000000000000000000000
+  psPlacesState: 000000000000000000000000
 --- !u!65 &4356877829830684176
 BoxCollider:
   m_ObjectHideFlags: 0
