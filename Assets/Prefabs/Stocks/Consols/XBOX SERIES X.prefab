@@ -283,6 +283,7 @@ MonoBehaviour:
   StockInfo:
     Name: Xbox Series X
     type: 2
+    price: 699.99
   isPlaced: 0
 --- !u!1 &6265066266356946306
 GameObject:

@@ -102,6 +102,7 @@ MonoBehaviour:
   StockInfo:
     Name: Ps5
     type: 1
+    price: 799.99
   isPlaced: 0
 --- !u!1 &4272813697180851313
 GameObject:

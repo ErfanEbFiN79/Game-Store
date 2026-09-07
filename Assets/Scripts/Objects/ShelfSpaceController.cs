@@ -16,7 +16,12 @@ public class ShelfSpaceController : MonoBehaviour
 
     [SerializeField] private bool[] xboxPlacesState;
     [SerializeField] private bool[] psPlacesState;
-    
+    public PriceLabel xboxPriceLabel;
+    public PriceLabel psPriceLabel;
+    public PriceLabel pcPriceLabel;
+    public PriceLabel otherPriceLabel;
+
+
 
     public void PlaceStocks(Stocks objectToPlace)
     {
@@ -106,6 +111,7 @@ public class ShelfSpaceController : MonoBehaviour
                     code = FindEmptyPlaces(psPlacesState);
                     objectToPlace.transform.SetParent(bigPs5Points[code]);
                     psPlacesState[code] = true;
+                    psPriceLabel.SetPrice(objectToPlace.StockInfo.price);
 
                     break;
 
@@ -114,6 +120,7 @@ public class ShelfSpaceController : MonoBehaviour
                     code = FindEmptyPlaces(xboxPlacesState);
                     objectToPlace.transform.SetParent(bigXboxPoints[FindEmptyPlaces(xboxPlacesState)]);
                     xboxPlacesState[code] = true;
+                    xboxPriceLabel.SetPrice(objectToPlace.StockInfo.price);
                    
                     break;
 
