@@ -281,9 +281,10 @@ MonoBehaviour:
   speedRotate: 0.5
   col: {fileID: 8077498213593536700}
   StockInfo:
-    Name: Xbox Series X
+    Name: XBOX SERIES X
     type: 2
     price: 699.99
+    stockObject: {fileID: 0}
   isPlaced: 0
 --- !u!1 &6265066266356946306
 GameObject:

@@ -14,16 +14,18 @@ public class Stocks : MonoBehaviour
 
     public StockInfoClass StockInfo;    
     public bool isPlaced;
-    
+
 
     #endregion
 
     #region Unity Functions
 
+
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
         firstRotate = transform.localRotation;
+        StockInfo = StockInfoController.instance.GetInfo(stockName: StockInfo.Name);
     }
 
     private void Update()

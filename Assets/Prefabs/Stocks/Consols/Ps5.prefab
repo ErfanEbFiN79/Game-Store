@@ -103,6 +103,7 @@ MonoBehaviour:
     Name: Ps5
     type: 1
     price: 799.99
+    stockObject: {fileID: 0}
   isPlaced: 0
 --- !u!1 &4272813697180851313
 GameObject:

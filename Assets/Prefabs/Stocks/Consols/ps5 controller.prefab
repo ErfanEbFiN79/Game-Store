@@ -1294,6 +1294,8 @@ MonoBehaviour:
   StockInfo:
     Name: Ps5 Cpntroller
     type: 6
+    price: 99.99
+    stockObject: {fileID: 0}
   isPlaced: 0
 --- !u!1 &8180082988540169835
 GameObject:

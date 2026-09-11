@@ -716,6 +716,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ps5
       objectReference: {fileID: 0}
+    - target: {fileID: 1409974764653516438, guid: 9da9b17eedd663d4ab49859dbcabd937, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3613993231831823789, guid: 9da9b17eedd663d4ab49859dbcabd937, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.360342
@@ -755,10 +759,6 @@ PrefabInstance:
     - target: {fileID: 3613993231831823789, guid: 9da9b17eedd663d4ab49859dbcabd937, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6805935123013244603, guid: 9da9b17eedd663d4ab49859dbcabd937, type: 3}
-      propertyPath: StockInfo.Name
-      value: Consol
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -800,67 +800,6 @@ Transform:
   - {fileID: 1220215869}
   m_Father: {fileID: 1099532375}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &280533680
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 74454956403913030, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: StockInfo.Name
-      value: Consol
-      objectReference: {fileID: 0}
-    - target: {fileID: 5040834947310502394, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_Name
-      value: XBOX SERIES X (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062905872707753648, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 12.719999
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062905872707753648, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.000000050083134
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062905872707753648, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -16.931513
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062905872707753648, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062905872707753648, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062905872707753648, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062905872707753648, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062905872707753648, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062905872707753648, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062905872707753648, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
 --- !u!1 &317768782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,67 +1464,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1929631950}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &471055326
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 74454956403913030, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: StockInfo.Name
-      value: Consol
-      objectReference: {fileID: 0}
-    - target: {fileID: 5040834947310502394, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_Name
-      value: XBOX SERIES X (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062905872707753648, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 13.641789
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062905872707753648, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.000000035182655
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062905872707753648, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -18.018293
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062905872707753648, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062905872707753648, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062905872707753648, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062905872707753648, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062905872707753648, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062905872707753648, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062905872707753648, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
 --- !u!1 &473437999
 GameObject:
   m_ObjectHideFlags: 0
@@ -1914,6 +1792,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2019087766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &644989385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 644989386}
+  - component: {fileID: 644989387}
+  m_Layer: 0
+  m_Name: StockInfoController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &644989386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644989385}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.38232, y: -0, z: -19.16672}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &644989387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644989385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a03d0d5e1ca169240a5a866018f52b15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StockInfoController
+  psInfo:
+  - Name: Ps5
+    type: 1
+    price: 799.99
+    stockObject: {fileID: 6805935123013244603, guid: 9da9b17eedd663d4ab49859dbcabd937, type: 3}
+  - Name: ps5 controller
+    type: 1
+    price: 99.99
+    stockObject: {fileID: 6610802361828120325, guid: 7778e36351a653345a2c730f4054b2db, type: 3}
+  xboxInfo:
+  - Name: XBOX SERIES X
+    type: 2
+    price: 709.99
+    stockObject: {fileID: 74454956403913030, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
+  pcInfo: []
+  gameInfo:
+  - Name: EvilWestLying
+    type: 6
+    price: 69.99
+    stockObject: {fileID: 1835936838739749079, guid: 2cb28ba0366d0364da26ebe20fd10aca, type: 3}
+  otherInfo: []
 --- !u!1 &659706010
 GameObject:
   m_ObjectHideFlags: 0
@@ -2541,10 +2484,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 74454956403913030, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
-      propertyPath: StockInfo.Name
-      value: Consol
-      objectReference: {fileID: 0}
     - target: {fileID: 5040834947310502394, guid: 1e8b86e45cbb02448a76ef8a8ad79094, type: 3}
       propertyPath: m_Name
       value: XBOX SERIES X (1)
@@ -3115,6 +3054,7 @@ MonoBehaviour:
     Name: 
     type: 0
     price: 0
+    stockObject: {fileID: 0}
   amountOnShelf: 0
   xboxPlacesState: 0000000000000000
   psPlacesState: 
@@ -4349,67 +4289,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 165231346}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1774715682
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1409974764653516438, guid: 9da9b17eedd663d4ab49859dbcabd937, type: 3}
-      propertyPath: m_Name
-      value: Ps5 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3613993231831823789, guid: 9da9b17eedd663d4ab49859dbcabd937, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 12.881529
-      objectReference: {fileID: 0}
-    - target: {fileID: 3613993231831823789, guid: 9da9b17eedd663d4ab49859dbcabd937, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.00000022907066
-      objectReference: {fileID: 0}
-    - target: {fileID: 3613993231831823789, guid: 9da9b17eedd663d4ab49859dbcabd937, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -11.970321
-      objectReference: {fileID: 0}
-    - target: {fileID: 3613993231831823789, guid: 9da9b17eedd663d4ab49859dbcabd937, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3613993231831823789, guid: 9da9b17eedd663d4ab49859dbcabd937, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3613993231831823789, guid: 9da9b17eedd663d4ab49859dbcabd937, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3613993231831823789, guid: 9da9b17eedd663d4ab49859dbcabd937, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3613993231831823789, guid: 9da9b17eedd663d4ab49859dbcabd937, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3613993231831823789, guid: 9da9b17eedd663d4ab49859dbcabd937, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3613993231831823789, guid: 9da9b17eedd663d4ab49859dbcabd937, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6805935123013244603, guid: 9da9b17eedd663d4ab49859dbcabd937, type: 3}
-      propertyPath: StockInfo.Name
-      value: Consol
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9da9b17eedd663d4ab49859dbcabd937, type: 3}
 --- !u!1 &1775436213
 GameObject:
   m_ObjectHideFlags: 0
@@ -5400,6 +5279,7 @@ MonoBehaviour:
     Name: 
     type: 0
     price: 0
+    stockObject: {fileID: 0}
   isPlaced: 0
 --- !u!33 &12004055962501569
 MeshFilter:
@@ -8336,6 +8216,7 @@ MonoBehaviour:
     Name: 
     type: 0
     price: 0
+    stockObject: {fileID: 0}
   amountOnShelf: 0
   xboxPlacesState: 000000000000000000000000
   psPlacesState: 000000000000000000000000
@@ -11197,8 +11078,6 @@ SceneRoots:
   - {fileID: 1787779381}
   - {fileID: 1385690976}
   - {fileID: 1069499258}
-  - {fileID: 471055326}
-  - {fileID: 280533680}
   - {fileID: 166789131}
-  - {fileID: 1774715682}
   - {fileID: 1210036331}
+  - {fileID: 644989386}

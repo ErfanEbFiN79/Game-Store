@@ -378,7 +378,9 @@ MonoBehaviour:
   col: {fileID: 6661719355556129600}
   StockInfo:
     Name: Evil Dead
-    type: 4
+    type: 6
+    price: 69.99
+    stockObject: {fileID: 0}
   isPlaced: 0
 --- !u!1 &9198228660738033025
 GameObject:
