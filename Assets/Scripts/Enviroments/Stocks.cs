@@ -53,7 +53,7 @@ public class Stocks : MonoBehaviour
         transform.localRotation = Quaternion.identity;
 
         isPlaced = false;
-        col.enabled = false;
+        //col.enabled = false;
     } 
 
     public void MakePalace()

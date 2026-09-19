@@ -1189,7 +1189,7 @@ GameObject:
   - component: {fileID: 6610802361828120325}
   m_Layer: 6
   m_Name: ps5 controller
-  m_TagString: Untagged
+  m_TagString: STK
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -156,6 +156,17 @@ public class ShelfSpaceController : MonoBehaviour
             objectsOnShelf.RemoveAt(objectsOnShelf.Count - 1);
         }
 
+        switch(info.Name)
+        {
+            case "Ps5":
+                psPlacesState[FindEmptyPlaces(psPlacesState) - 1] = false;
+                break;
+
+            case "XBOX SERIES X":
+                xboxPlacesState[FindEmptyPlaces(xboxPlacesState) - 1] = false;
+                break;
+        }
+       
 
         return objectForReturn;
     }
