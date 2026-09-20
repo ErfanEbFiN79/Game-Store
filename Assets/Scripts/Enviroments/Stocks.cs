@@ -70,4 +70,9 @@ public class Stocks : MonoBehaviour
     }
 
     #endregion
+
+    public void ChangeInfo(float newPrice)
+    {
+        StockInfo.price = newPrice;
+    }
 }

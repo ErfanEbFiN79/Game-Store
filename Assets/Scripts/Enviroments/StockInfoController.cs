@@ -42,4 +42,15 @@ public class StockInfoController : MonoBehaviour
         return infoToReturn;
 
     }
+
+    public void SetInfo(string stockName, float newPrice)
+    {
+        foreach (var item in allStocks)
+        {
+            if (item.Name == stockName)
+            {
+                item.price = newPrice;
+            }
+        }
+    }
 }

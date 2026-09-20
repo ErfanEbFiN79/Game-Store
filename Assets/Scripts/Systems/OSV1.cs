@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ public class OSV1 : MonoBehaviour
 
     public TMP_Text nameText;
     public TMP_Text priceText;
+    public Stocks whatStocks;
+    public TMP_InputField inputPriceField;
 
 
     #region Show and change price
@@ -30,7 +33,8 @@ public class OSV1 : MonoBehaviour
     {
         if (other.CompareTag("STK"))
         {
-            ShowInfo(other.GetComponent<Stocks>());
+            whatStocks = other.GetComponent<Stocks>();
+            ShowInfo(whatStocks);
         }
     }
 
@@ -51,4 +55,10 @@ public class OSV1 : MonoBehaviour
     }
 
     #endregion
+
+    public void UpdateThePrice()
+    {
+        float price = Convert.ToUInt64(inputPriceField.text);
+        whatStocks.ChangeInfo(price);
+    }
 }
