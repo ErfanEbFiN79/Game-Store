@@ -4,7 +4,7 @@ using UnityEngine;
 public class Stocks : MonoBehaviour
 {
     #region Variables
-
+    public string code;
     [SerializeField] private float speed;
     [SerializeField] private float speedRotate;
     [SerializeField] private Collider col;
@@ -15,17 +15,22 @@ public class Stocks : MonoBehaviour
     public StockInfoClass StockInfo;    
     public bool isPlaced;
 
+    private float lastPrice;
 
     #endregion
 
     #region Unity Functions
-
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
         firstRotate = transform.localRotation;
         StockInfo = StockInfoController.instance.GetInfo(stockName: StockInfo.Name);
+        print(PlayerPrefs.GetFloat(code));
+        if (PlayerPrefs.GetFloat(code) > 0)
+        {
+            ChangeInfo(PlayerPrefs.GetFloat(code));
+        }
     }
 
     private void Update()
@@ -74,5 +79,6 @@ public class Stocks : MonoBehaviour
     public void ChangeInfo(float newPrice)
     {
         StockInfo.price = newPrice;
+        PlayerPrefs.SetFloat(code, StockInfo.price);
     }
 }

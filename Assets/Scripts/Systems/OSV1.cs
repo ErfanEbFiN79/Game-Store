@@ -9,6 +9,7 @@ public class OSV1 : MonoBehaviour
     public TMP_Text priceText;
     public Stocks whatStocks;
     public TMP_InputField inputPriceField;
+    public PriceLabel[] allPriceLabel;
 
 
     #region Show and change price
@@ -58,7 +59,12 @@ public class OSV1 : MonoBehaviour
 
     public void UpdateThePrice()
     {
-        float price = Convert.ToUInt64(inputPriceField.text);
+        float price = (float)Convert.ToDouble(inputPriceField.text);
         whatStocks.ChangeInfo(price);
+        ShowInfo(whatStocks);
+        foreach (var item in allPriceLabel)
+        {
+            item.GetLastInfo();
+        }
     }
 }

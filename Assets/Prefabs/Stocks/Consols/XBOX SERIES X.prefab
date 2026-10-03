@@ -277,6 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aacb7aaad244b5e4d8de9893a591664e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Stocks
+  code: X2022GHT
   speed: 0.02
   speedRotate: 0.5
   col: {fileID: 8077498213593536700}
